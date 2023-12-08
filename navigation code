@@ -1,0 +1,32 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class navigation {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\sai mahesh\\Downloads\\web browsers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.google.com/");
+		Thread.sleep(6000);
+		driver.findElement(By.name("q")).sendKeys("youtube");	
+		Thread.sleep(5000);
+		driver.findElement(By.name("q")).submit();
+		Thread.sleep(6000);
+		driver.navigate().to("https://www.facebook.com/");
+		Thread.sleep(6000);
+		driver.findElement(By.id("email")).sendKeys("saiym9542@gmail.com");
+		Thread.sleep(6000);
+		driver.navigate().refresh();
+		Thread.sleep(6000);
+		driver.navigate().back();
+		Thread.sleep(6000);
+		driver.navigate().forward();
+		Thread.sleep(6000);
+		driver.quit();	
+	
+		
+	}
+
+}
